@@ -2,5 +2,11 @@
     "files.associations": {
         "stdarg.h": "c",
         "stdio.h": "c"
-    }
+    },
+    "cmake.configureOnOpen": true,
+    "cmake.sourceDirectory": [
+        "/media/E/lichunyu/DataStructures/course/0201_union",
+        "/media/E/lichunyu/DataStructures/course/0202_merge_list"
+    ],
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

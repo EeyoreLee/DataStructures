@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "SqList.h"
-#include "Union.h"
+#include "MergeList.h"
 
 void PrintElem(ElemType e)
 {
@@ -12,12 +13,12 @@ int main(void)
     SqList La, Lb;
     InitList(&La);
     InitList(&Lb);
-    ElemType elem_a[5] = {1, 2, 3, 4, 5};
-    ElemType elem_b[7] = {1, 2, 3, 6, 7, 8, 9};
-    for (int i = 1; i <= 5; ++i)
+    ElemType elem_a[4] = {3, 5, 8, 11};
+    for (int i = 1; i <= 4; ++i)
     {
         ListInsert(&La, i, elem_a[i - 1]);
     }
+    ElemType elem_b[7] = {2, 6, 8, 9, 11, 15, 20};
     for (int i = 1; i <= 7; ++i)
     {
         ListInsert(&Lb, i, elem_b[i - 1]);
@@ -25,12 +26,12 @@ int main(void)
     printf("La: ");
     ListTraverse(La, PrintElem);
     printf("\n");
-    printf("Lb: ");
+    printf("La: ");
     ListTraverse(Lb, PrintElem);
     printf("\n");
-    Union(&La, &Lb);
-    printf("union{La, Lb}: ");
-    ListTraverse(Lb, PrintElem);
+    SqList Lc = MergeList(La, Lb);
+    printf("Lc: ");
+    ListTraverse(Lc, PrintElem);
     printf("\n");
     return 0;
 }
