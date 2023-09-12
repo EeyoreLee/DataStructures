@@ -1,1 +1,1 @@
-add_library(Scanf_lib Status.c)
+add_library(Status Status.c)

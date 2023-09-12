@@ -1,4 +1,4 @@
-#include <SqList.h>
+#include "SqList.h"
 Status InitList(SqList *L)
 {
     L->elem = (ElemType *)malloc(sizeof(ElemType) * LIST_INIT_SIZE);
@@ -63,7 +63,7 @@ Status ListInsert(SqList *L, int i, ElemType e)
         L->listsize += LISTINCREMENT;
     }
     ElemType *q = &(L->elem[i - 1]);
-    for (ElemType *p = L->elem[L->length - 1]; p >= q; --p)
+    for (ElemType *p = &(L->elem[L->length - 1]); p >= q; --p)
     {
         *(p + 1) = *p;
     }
